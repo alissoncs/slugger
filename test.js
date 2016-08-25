@@ -4,6 +4,7 @@ var assert = require('assert'),
 var stuff = {
     'Hello yOu CRAZY Swede!': ['hello-you-crazy-swede', 'Hello-yOu-CRAZY-Swede', 'hello_you_crazy_swede', 'hello-you', 'hello-you-crazy-swede!', 'hello-you-crazy-swede'],
     'i ∆ ∞ ♥ & YOU very much': ['i-you-very-much', 'i-YOU-very-much', 'i_you_very_much', 'i-you', 'i-&-you-very-much', 'i-you-very-much'],
+    'A brázilian wÓrd':  ['a-brazilian-word', 'A-brazilian-wOrd', 'a_brazilian_word', 'a', 'a-brazilian-word', 'a-brazilian-word'],
     '%20boo': ['boo', 'boo', 'boo', 'boo', 'boo', '20boo']
 };
 

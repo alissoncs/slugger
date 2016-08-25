@@ -3,8 +3,27 @@
 (function () {
 var whitespace = /\s+/g;
 
+function replaceSpecialChars(str)
+{
+    str = str.replace(/[ÀÁÂÃÄÅ]/,"A");
+    str = str.replace(/[àáâãäå]/,"a");
+    str = str.replace(/[uúùüû]/,"u");
+    str = str.replace(/[ÚÙÛÜ]/,"u");
+    str = str.replace(/[oóòõöô]/,"o");
+    str = str.replace(/[ÓÔÕÖ]/,"O");
+    str = str.replace(/[ÈÉÊË]/,"E");
+    str = str.replace(/[eéèẽêë]/,"e");
+    str = str.replace(/[Ç]/,"C");
+    str = str.replace(/[ç]/,"c");
+    return str
+
+}
+
 function slugger(string, opts) {
     opts || (opts = {});
+
+    string = replaceSpecialChars(string)
+
     var allowedCharacters = "A-Za-z0-9_ -";
     if (opts.alsoAllow) allowedCharacters = opts.alsoAllow + allowedCharacters;
     var re = new RegExp('[^' + allowedCharacters + ']', 'g');
